@@ -43,7 +43,9 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (9.0.0)
+    bindex (0.5.0)
     builder (3.2.3)
+    byebug (10.0.2)
     concurrent-ruby (1.1.4)
     crass (1.0.4)
     erubi (1.8.0)
@@ -51,6 +53,9 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.5.2)
       concurrent-ruby (~> 1.0)
+    jbuilder (2.8.0)
+      activesupport (>= 4.2.0)
+      multi_json (>= 1.2)
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -63,10 +68,15 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
+    multi_json (1.13.1)
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
+    pg (1.1.4)
+    puma (3.12.0)
     rack (2.0.6)
+    rack-proxy (0.6.5)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.2)
@@ -105,6 +115,15 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    web-console (3.7.0)
+      actionview (>= 5.0)
+      activemodel (>= 5.0)
+      bindex (>= 0.4.0)
+      railties (>= 5.0)
+    webpacker (3.5.5)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -113,7 +132,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rails
+  byebug
+  jbuilder (~> 2.5)
+  pg (>= 0.18, < 2.0)
+  puma (~> 3.11)
+  rails (~> 5.2.2)
+  tzinfo-data
+  web-console (>= 3.3.0)
+  webpacker
+
+RUBY VERSION
+   ruby 2.6.0p0
 
 BUNDLED WITH
    2.0.1
