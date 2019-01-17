@@ -1,5 +1,14 @@
 FROM ruby:2.6.0
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+# Install specified bundler
+RUN gem install bundler:2.0.1
+
+# For latest node
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+# For yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client yarn
 RUN mkdir /myapp
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
